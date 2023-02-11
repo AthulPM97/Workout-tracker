@@ -1,7 +1,11 @@
+import NavigationBar from "./components/UI/NavigationBar";
+import HomePage from "./pages/HomePage";
+
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NavigationBar/>
+      <HomePage/>
     </div>
   );
 }
