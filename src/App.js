@@ -1,3 +1,4 @@
+import Day from "./components/Exercise/Day";
 import NavigationBar from "./components/UI/NavigationBar";
 import HomePage from "./pages/HomePage";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <NavigationBar/>
       <HomePage/>
+      <Day />
     </div>
   );
 }
