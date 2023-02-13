@@ -2,7 +2,7 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="light">
+    <Navbar bg="light" style={{border:'1px solid black'}}>
       <Container>
         <Navbar.Brand href="/">Workout Tracker</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
