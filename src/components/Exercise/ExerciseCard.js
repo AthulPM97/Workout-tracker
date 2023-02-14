@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Col, Form, Row } from "react-bootstrap";
+import BreakTimer from "./BreakTimer";
 import Sets from "./Sets";
 
 const ExerciseCard = (props) => {
@@ -8,6 +9,10 @@ const ExerciseCard = (props) => {
   //handlers
   const showCardHandler = () => {
     setShowGroup((prev) => !prev);
+  };
+
+  const submitDataHandler = () => {
+    setShowGroup(false);
   };
 
   return (
@@ -24,9 +29,17 @@ const ExerciseCard = (props) => {
       </Card.Header>
       {showGroup && (
         <Card.Body>
-          <p>Current Load: </p>
-          <input type="number" value={props.data.currentLoad} />
-          <Sets sets={props.data.sets} />
+          <Row>
+            <Col>
+              <Form.Group>
+                <Form.Label>Current Load</Form.Label>
+                <Form.Control type="number" value={props.data.currentLoad} />
+              </Form.Group>
+            </Col>
+            <Col><BreakTimer/></Col>
+          </Row>
+          <br />
+          <Sets sets={props.data.sets} onComplete={submitDataHandler} />
         </Card.Body>
       )}
     </Card>

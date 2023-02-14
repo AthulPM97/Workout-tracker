@@ -8,7 +8,7 @@ const data = [{
     sets: {1: 12, 2: 8, 3: 8, 4:8},
 }]
 
-const Day = (props) => {
+const Day = () => {
     return(
         <Container>
             {data.map((item) => <ExerciseCard data={item}/>)}
