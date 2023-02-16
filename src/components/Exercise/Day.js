@@ -6,7 +6,14 @@ const data = [{
     name: 'Incline Bench press',
     currentLoad: 10,
     sets: {1: 12, 2: 8, 3: 8, 4:8},
-}]
+},
+{
+    id: 'e1',
+    name: 'Cable crossover',
+    currentLoad: 10,
+    sets: {1: 12, 2: 8, 3: 8, 4:8},
+},
+]
 
 const Day = () => {
     return(

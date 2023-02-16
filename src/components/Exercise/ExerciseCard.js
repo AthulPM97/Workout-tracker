@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import BreakTimer from "./BreakTimer";
 import Sets from "./Sets";
@@ -16,6 +16,7 @@ const ExerciseCard = (props) => {
   };
 
   return (
+    <React.Fragment>
     <Card>
       <Card.Header>
         {props.data.name}
@@ -43,6 +44,8 @@ const ExerciseCard = (props) => {
         </Card.Body>
       )}
     </Card>
+    <br/>
+    </React.Fragment>
   );
 };
 
