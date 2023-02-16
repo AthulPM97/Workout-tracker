@@ -7,6 +7,7 @@ import BreakTimer from "./BreakTimer";
 import Sets from "./Sets";
 
 const ExerciseCard = (props) => {
+  console.log(props);
   //custom hooks
   const { error, sendRequest } = useHttp();
 
@@ -32,19 +33,22 @@ const ExerciseCard = (props) => {
     };
     sendRequest(
       {
-        url: "https://workout-tracker-d956e-default-rtdb.firebaseio.com/pushday.json",
-        method: "POST",
+        url: `https://workout-tracker-d956e-default-rtdb.firebaseio.com/${props.day}/${props.data.id}.json`,
+        method: "PUT",
         body: data,
       },
       (responseData) => {
-        const dataWithId = {
-          ...data,
-          id: responseData.name,
+        if (props.day === "pushday") {
+          dispatch(
+            workoutActions.updatePush({ id: responseData.name, data: data })
+          );
         }
-        dispatch(workoutActions.addToPush(dataWithId));
+        if (props.day === "legday") {
+          dispatch(workoutActions.addToLegs(responseData.name));
+        }
       }
     );
-    if(error) console.log('Error adding data' + error);
+    if (error) console.log("Error adding data" + error);
 
     setShowGroup(false);
   };
@@ -70,7 +74,7 @@ const ExerciseCard = (props) => {
                   <Form.Label>Current Load</Form.Label>
                   <Form.Control
                     type="number"
-                    value={props.data.currentLoad}
+                    defaultValue={props.data.currentLoad}
                     ref={currentLoad}
                   />
                 </Form.Group>

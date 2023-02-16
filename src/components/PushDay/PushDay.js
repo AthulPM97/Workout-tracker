@@ -11,6 +11,7 @@ const PushDay = () => {
   //store
   const dispatch = useDispatch();
   const exercises = useSelector(state => state.muscleGroup.push);
+  console.log(exercises)
 
   //side effects
   useEffect(() => {
@@ -19,6 +20,7 @@ const PushDay = () => {
         url: "https://workout-tracker-d956e-default-rtdb.firebaseio.com/pushday.json",
       },
       (data) => {
+        console.log(data);
         const keys = Object.keys(data);
         let exercisesArray = [];
         keys.forEach((key) => {
@@ -34,7 +36,7 @@ const PushDay = () => {
     if(error) console.log('error fetching data' + error);
   }, []);
 
-  return <Day data={exercises}/>;
+  return <Day data={exercises} day='pushday'/>;
 };
 
 export default PushDay;

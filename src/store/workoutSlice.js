@@ -10,11 +10,18 @@ const workoutSlice = createSlice({
   name: "muscle group",
   initialState: initialWorkoutState,
   reducers: {
-    addToPush(state, action) {
-        state.push = [...state.push, action.payload]
+    updatePush(state, action) {
+      let existingItem = state.push.find((item) => item.id === action.payload.id);
+      existingItem = {...action.payload.data, id: action.payload.id};
     },
     setPush(state, action) {
       state.push = action.payload;
+    },
+    addToLegs(state,action) {
+      state.legs = [...state.legs, action.payload]
+    },
+    setLegs(state,action) {
+      state.legs = action.payload;
     }
   },
 });

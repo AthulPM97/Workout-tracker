@@ -33,19 +33,19 @@ const Sets = (props) => {
         <Row>
           <Col>
             <Form.Label>Set 1</Form.Label>
-            <Form.Control type="number" value={props.sets[0]} ref={set1} />
+            <Form.Control type="number" defaultValue={props.sets[0]} ref={set1} />
             <Form.Label>Set 4</Form.Label>
-            <Form.Control type="number" value={props.sets[3]} ref={set4} />
+            <Form.Control type="number" defaultValue={props.sets[3]} ref={set4} />
           </Col>
           <Col>
             <Form.Label>Set 2</Form.Label>
-            <Form.Control type="number" value={props.sets[1]} ref={set2} />
+            <Form.Control type="number" defaultValue={props.sets[1]} ref={set2} />
             <Form.Label>Set 5</Form.Label>
-            <Form.Control type="number" value={props.sets[4]} ref={set5} />
+            <Form.Control type="number" defaultValue={props.sets[4]} ref={set5} />
           </Col>
           <Col>
             <Form.Label>Set 3</Form.Label>
-            <Form.Control type="number" value={props.sets[2]} ref={set3} />
+            <Form.Control type="number" defaultValue={props.sets[2]} ref={set3} />
           </Col>
         </Row>
       </Form.Group>
