@@ -7,3 +7,6 @@ Set up index.js main store and workoutSlice. Workout slice initial state are 3 e
 1.When user clicks on submit form after workout, get input and make post request to 'endpoint/push.json'
 -collected set data and currentLoad data with refs. added workout name from props.data.name passed to ExerciseCard
 -created const data with all combined data.
+-used sendRequest of custom hook to make post request. 
+-added addToPush dispatch method in workoutSlice that updates the push array after submission 
+-before adding to array id is added to exercise object

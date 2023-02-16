@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import useHttp from "../../hooks/use-http";
 import { workoutActions } from "../../store/workoutSlice";
 import BreakTimer from "./BreakTimer";
@@ -44,6 +44,7 @@ const ExerciseCard = (props) => {
         dispatch(workoutActions.addToPush(dataWithId));
       }
     );
+    if(error) console.log('Error adding data' + error);
 
     setShowGroup(false);
   };
