@@ -1,26 +1,15 @@
 import { Container } from "react-bootstrap";
 import ExerciseCard from "./ExerciseCard";
 
-const data = [{
-    id: 'e1',
-    name: 'Incline Bench press',
-    currentLoad: 10,
-    sets: {1: 12, 2: 8, 3: 8, 4:8},
-},
-{
-    id: 'e1',
-    name: 'Cable crossover',
-    currentLoad: 10,
-    sets: {1: 12, 2: 8, 3: 8, 4:8},
-},
-]
-
-const Day = () => {
-    return(
-        <Container>
-            {data.map((item) => <ExerciseCard data={item}/>)}
-        </Container>
-    )
+const Day = (props) => {
+  console.log(props.data)
+  return (
+    <Container>
+      {props.data.map((item) => (
+        <ExerciseCard data={item} key={item.id}/>
+      ))}
+    </Container>
+  );
 };
 
 export default Day;

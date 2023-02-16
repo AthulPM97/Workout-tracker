@@ -13,6 +13,9 @@ const workoutSlice = createSlice({
     addToPush(state, action) {
         state.push = [...state.push, action.payload]
     },
+    setPush(state, action) {
+      state.push = action.payload;
+    }
   },
 });
 
