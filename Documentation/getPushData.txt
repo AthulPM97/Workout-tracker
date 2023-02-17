@@ -2,3 +2,5 @@ When page is reloaded, send get request and get data for push workout.
 - sets object being saved to DB is now an array because storing as an object was returning an array with random null value in it.
 - used useEffect to fetch saved data from DB in the PushDay component.
 - data to be rendered is passed as props to Day component so that Exercise folder can be reused for pull and legs.
+- to reuse the exercise components, I'm passing the day as prop and conditionally calling the dispatch methods.
+- now I only have to create PullDay and LegDay components and pass data as props to Day component

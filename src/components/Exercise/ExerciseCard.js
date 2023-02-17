@@ -44,7 +44,14 @@ const ExerciseCard = (props) => {
           );
         }
         if (props.day === "legday") {
-          dispatch(workoutActions.addToLegs(responseData.name));
+          dispatch(
+            workoutActions.updateLegs({ id: responseData.name, data: data })
+          );
+        }
+        if (props.day === "pullday") {
+          dispatch(
+            workoutActions.updatePull({ id: responseData.name, data: data })
+          );
         }
       }
     );

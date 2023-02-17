@@ -10,3 +10,8 @@ Set up index.js main store and workoutSlice. Workout slice initial state are 3 e
 -used sendRequest of custom hook to make post request. 
 -added addToPush dispatch method in workoutSlice that updates the push array after submission 
 -before adding to array id is added to exercise object
+
+correction:
+- Currently only put request and get request is performed in the app. POST request is done externally in postman. 
+- I'm manually adding workout data.
+- Adding workout from scratch will be implemented later since its not needed for my scope and usecase

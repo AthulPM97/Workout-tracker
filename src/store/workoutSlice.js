@@ -17,11 +17,19 @@ const workoutSlice = createSlice({
     setPush(state, action) {
       state.push = action.payload;
     },
-    addToLegs(state,action) {
-      state.legs = [...state.legs, action.payload]
+    updateLegs(state,action) {
+      let existingItem = state.push.find((item) => item.id === action.payload.id);
+      existingItem = {...action.payload.data, id: action.payload.id};
     },
     setLegs(state,action) {
       state.legs = action.payload;
+    },
+    updatePull(state,action) {
+      let existingItem = state.push.find((item) => item.id === action.payload.id);
+      existingItem = {...action.payload.data, id: action.payload.id};
+    },
+    setPull(state,action) {
+      state.pull = action.payload;
     }
   },
 });

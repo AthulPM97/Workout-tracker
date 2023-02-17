@@ -4,19 +4,19 @@ import useHttp from "../../hooks/use-http";
 import { workoutActions } from "../../store/workoutSlice";
 import Day from "../Exercise/Day";
 
-const PushDay = () => {
+const LegDay = () => {
   //custom hooks
   const { error, sendRequest } = useHttp();
 
   //store
   const dispatch = useDispatch();
-  const exercises = useSelector(state => state.muscleGroup.push);
+  const exercises = useSelector(state => state.muscleGroup.legs);
 
   //side effects
   useEffect(() => {
     sendRequest(
       {
-        url: "https://workout-tracker-d956e-default-rtdb.firebaseio.com/pushday.json",
+        url: "https://workout-tracker-d956e-default-rtdb.firebaseio.com/legday.json",
       },
       (data) => {
         const keys = Object.keys(data);
@@ -28,13 +28,13 @@ const PushDay = () => {
           };
           exercisesArray.push(exerciseWithId);
         });
-        dispatch(workoutActions.setPush(exercisesArray));
+        dispatch(workoutActions.setLegs(exercisesArray));
       }
     );
     if(error) console.log('error fetching data' + error);
   }, []);
 
-  return <Day data={exercises} day='pushday'/>;
+  return <Day data={exercises} day='legday'/>;
 };
 
-export default PushDay;
+export default LegDay;
