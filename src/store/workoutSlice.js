@@ -11,26 +11,44 @@ const workoutSlice = createSlice({
   initialState: initialWorkoutState,
   reducers: {
     updatePush(state, action) {
-      let existingItem = state.push.find((item) => item.id === action.payload.id);
-      existingItem = {...action.payload.data, id: action.payload.id};
+      let existingItem = state.push.find(
+        (item) => item.name === action.payload.name
+      );
+      existingItem = { ...action.payload, id: existingItem.id };
+      let existingItemIndex = state.push.findIndex(
+        (item) => item.name === existingItem.name
+      );
+      state.push[existingItemIndex] = { ...existingItem };
     },
     setPush(state, action) {
       state.push = action.payload;
     },
-    updateLegs(state,action) {
-      let existingItem = state.push.find((item) => item.id === action.payload.id);
-      existingItem = {...action.payload.data, id: action.payload.id};
+    updateLegs(state, action) {
+      let existingItem = state.legs.find(
+        (item) => item.name === action.payload.name
+      );
+      existingItem = { ...action.payload, id: existingItem.id };
+      let existingItemIndex = state.legs.findIndex(
+        (item) => item.name === existingItem.name
+      );
+      state.legs[existingItemIndex] = { ...existingItem };
     },
-    setLegs(state,action) {
+    setLegs(state, action) {
       state.legs = action.payload;
     },
-    updatePull(state,action) {
-      let existingItem = state.push.find((item) => item.id === action.payload.id);
-      existingItem = {...action.payload.data, id: action.payload.id};
+    updatePull(state, action) {
+      let existingItem = state.pull.find(
+        (item) => item.name === action.payload.name
+      );
+      existingItem = { ...action.payload, id: existingItem.id };
+      let existingItemIndex = state.pull.findIndex(
+        (item) => item.name === existingItem.name
+      );
+      state.pull[existingItemIndex] = { ...existingItem };
     },
-    setPull(state,action) {
+    setPull(state, action) {
       state.pull = action.payload;
-    }
+    },
   },
 });
 

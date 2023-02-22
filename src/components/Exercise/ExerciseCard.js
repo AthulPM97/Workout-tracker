@@ -7,7 +7,6 @@ import BreakTimer from "./BreakTimer";
 import Sets from "./Sets";
 
 const ExerciseCard = (props) => {
-  console.log(props);
   //custom hooks
   const { error, sendRequest } = useHttp();
 
@@ -38,20 +37,16 @@ const ExerciseCard = (props) => {
         body: data,
       },
       (responseData) => {
+        // response data: {name:..., currentLoad:..., sets: []}
         if (props.day === "pushday") {
-          dispatch(
-            workoutActions.updatePush({ id: responseData.name, data: data })
-          );
+          dispatch(workoutActions.updatePush(data));
         }
         if (props.day === "legday") {
-          dispatch(
-            workoutActions.updateLegs({ id: responseData.name, data: data })
-          );
+          dispatch(workoutActions.updateLegs(data));
         }
         if (props.day === "pullday") {
-          dispatch(
-            workoutActions.updatePull({ id: responseData.name, data: data })
-          );
+          console.log(responseData);
+          dispatch(workoutActions.updatePull(data));
         }
       }
     );

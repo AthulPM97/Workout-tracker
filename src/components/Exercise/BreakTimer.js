@@ -33,7 +33,7 @@ const BreakTimer = () => {
 
   //handlers
   const startTimerHandler = () => {
-    setTimerActive(true);
+    setTimerActive(state => !state);
   };
 
   return (

@@ -34,7 +34,7 @@ const PullDay = () => {
     if(error) console.log('error fetching data' + error);
   }, []);
 
-  return <Day data={exercises} day='legday'/>;
+  return <Day data={exercises} day='pullday'/>;
 };
 
 export default PullDay;
