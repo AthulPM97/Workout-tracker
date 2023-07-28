@@ -35,6 +35,10 @@ const BreakTimer = () => {
   const startTimerHandler = () => {
     setTimerActive(state => !state);
   };
+  const stopTimerHandler = () => {
+    setTimerActive(state => !state);
+    setTimer(0)
+  };
 
   return (
     <React.Fragment>
@@ -47,6 +51,13 @@ const BreakTimer = () => {
           {formatTime(timer)}
         </Col>
         <Col>
+          <Button
+            variant="primary"
+            onClick={stopTimerHandler}
+            style={{ float: "right" }}
+          >
+            Stop
+          </Button>
           <Button
             variant="primary"
             onClick={startTimerHandler}
