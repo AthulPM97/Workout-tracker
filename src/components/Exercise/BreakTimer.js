@@ -52,7 +52,7 @@ const BreakTimer = () => {
         </Col>
         <Col>
           <Button
-            variant="primary"
+            variant="danger"
             onClick={stopTimerHandler}
             style={{ float: "right" }}
           >
