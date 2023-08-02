@@ -1,6 +1,9 @@
 import { Card, Container } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <Card>
