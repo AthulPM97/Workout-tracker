@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import { Card, Container } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { getStats } from "../store/getStatsThunk";
 
 const HomePage = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    getStats()
+  }, [])
 
   return (
     <Container>
